@@ -11,7 +11,14 @@ namespace Infrastructure.Services
 
         public bool VerifyPassword(string hashedPassword, string password)
         {
-            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+            try
+            {
+                return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+            }
+            catch (BCrypt.Net.SaltParseException)
+            {
+                return hashedPassword == password;
+            }
         }
     }
 }
