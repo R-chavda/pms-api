@@ -2,6 +2,7 @@
 using Application.DTOs.Request.User;
 using Application.DTOs.Response.Organization;
 using Application.DTOs.Response.User;
+using Domain.Constants;
 using Domain.Entities;
 using Domain.Enums;
 using Domain.Wrappers;
@@ -33,7 +34,9 @@ namespace Application.Services
                 return ApiResponse<AuthenticatedUserResponse>.Fail(StatusCode.NotFound, $"User with email {loginUserReqDto.Email} does not exist.");
             }
 
-            var passwordCheck = hashingService.VerifyPassword(userExist.Password, loginUserReqDto.Password);
+            var passwordCheck = userExist.Id == SystemUser.UserId
+                ? userExist.Password == loginUserReqDto.Password
+                : hashingService.VerifyPassword(userExist.Password, loginUserReqDto.Password);
             if (!passwordCheck)
             {
                 return ApiResponse<AuthenticatedUserResponse>.Fail(StatusCode.BadRequest, $"Invalid Credentials");
