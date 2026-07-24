@@ -1,0 +1,12 @@
+﻿[
+  {
+    "Email": "superuser@pms.com",
+    "UserName": "super.user",
+    "Password": "Admin$123",
+    "RoleId": 1,
+    "ReportsToUserId": null,
+    "CreatedAt": "2025-05-31T10:30:00Z",
+    "OrganizationId": -1,
+    "CreatedBy": -1
+  }
+]

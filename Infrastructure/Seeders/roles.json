@@ -1,0 +1,22 @@
+﻿[
+  {
+    "Name": "SuperUser",
+    "CreatedAt": "2025-05-31T10:30:00Z",
+    "CreatedBy": -1
+  },
+  {
+    "Name": "Admin",
+    "CreatedAt": "2025-05-31T10:30:00Z",
+    "CreatedBy": -1
+  },
+  {
+    "Name": "Manager",
+    "CreatedAt": "2025-05-31T10:30:00Z",
+    "CreatedBy": -1
+  },
+  {
+    "Name": "Employee",
+    "CreatedAt": "2025-05-31T10:30:00Z",
+    "CreatedBy": -1
+  }
+]
